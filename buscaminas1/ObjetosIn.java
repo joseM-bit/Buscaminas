@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 /**
  * 
  * @author Sammy Guergachi <sguergachi at gmail.com>
+ * Jose Miguel/joseM-bit
  */
 public class ObjetosIn {
     //Atributos
@@ -38,12 +39,21 @@ public class ObjetosIn {
         }
     }
 
-
+    /**
+     *
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public Object lecturaObjeto() throws IOException, ClassNotFoundException{
       return ois.readObject();
       
     }
     
+    /**
+     *
+     * @throws IOException
+     */
     public void cerrarEnlace() throws IOException{
     ois.close();
     }

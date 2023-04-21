@@ -15,16 +15,34 @@ import javax.swing.JPanel;
 /*
 
 */
+
+/**
+ *
+ * @author Jose Miguel/joseM-bit
+ */
+
 public class Tablero extends JPanel implements Serializable{
+
+    /**
+     *
+     */
     public static final int dimension=9;
     private  int max = dimension *60;
     private  int lado= max / dimension;
     private Casilla c[][];
    //CONSTRUCTOR
+
+    /**
+     *
+     */
    public Tablero(){
     inicializacion();   
    }
-   public void inicializacion(){
+
+    /**
+     *
+     */
+    public void inicializacion(){
                c = new Casilla[dimension][dimension];
         int y = 0;
         for (int i = 0; i < dimension; i++) {
@@ -41,11 +59,20 @@ public class Tablero extends JPanel implements Serializable{
         cambiarVecinos();
    }
    //GETTERS
+
+    /**
+     *
+     * @return
+     */
    public Casilla[][]getMatrizcasillas(){
     return c;
     }
    
    //METODOS FUNCIONALES
+
+    /**
+     *
+     */
    public void ponerMinas(){
        int contador=0;
        Random random= new Random();
@@ -59,6 +86,10 @@ public class Tablero extends JPanel implements Serializable{
         }
    }
    
+    /**
+     *
+     * @param g
+     */
     @Override
     public void paintComponent(Graphics g) {
         for (int i = 0; i < dimension; i++) {
@@ -70,11 +101,18 @@ public class Tablero extends JPanel implements Serializable{
 
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(max, max);
     }
     
+    /**
+     *
+     */
     public void cambiarVecinos(){
         for (int i = 0; i <c.length; i++) {
             for (int j = 0; j < c.length; j++) {
@@ -98,7 +136,14 @@ public class Tablero extends JPanel implements Serializable{
             
         }
     }
-      public void visualizacionTablero(Graphics g,int fila, int columna) {
+
+    /**
+     *
+     * @param g
+     * @param fila
+     * @param columna
+     */
+    public void visualizacionTablero(Graphics g,int fila, int columna) {
         Image ima; 
         Estado est;
 
@@ -150,7 +195,13 @@ public class Tablero extends JPanel implements Serializable{
                 }
            
       }
-      public void abrirVecinos0(int fila, int columna){
+
+    /**
+     *
+     * @param fila
+     * @param columna
+     */
+    public void abrirVecinos0(int fila, int columna){
 
               
                 for (int k=fila-1;k<=fila+1;k++){
@@ -171,16 +222,43 @@ public class Tablero extends JPanel implements Serializable{
 
     }
       
+    /**
+     *
+     * @param i
+     * @param j
+     * @return
+     */
     public boolean tieneBomba(int i,int j){
         return c[i][j].isOcupada();
     }
 
+    /**
+     *
+     * @param i
+     * @param j
+     * @param x
+     * @param y
+     * @return
+     */
     public boolean dentroCasilla(int i, int j, int x, int y) {
         return c[i][j].getRectangulo().contains(x, y);
     }
+
+    /**
+     *
+     * @param i
+     * @param j
+     * @return
+     */
     public Casilla getCasilla(int i, int j){
         return c[i][j];
     }
+
+    /**
+     *
+     * @param i
+     * @param j
+     */
     public  void verificarEstados(int i, int j){
     switch(c[i][j].getEstado()){
             case ABRIR:
@@ -198,6 +276,11 @@ public class Tablero extends JPanel implements Serializable{
         }
     
     }
+
+    /**
+     *
+     * @return
+     */
     public int puntaje(){
         int puntaje=0;
        for(int i=0;i<c.length;i++){
@@ -210,6 +293,10 @@ public class Tablero extends JPanel implements Serializable{
         }
        return puntaje;
     }
+
+    /**
+     *
+     */
     public void abrirBombas(){
         for (int i = 0; i <c.length; i++) {
             for (int j = 0; j < c.length; j++) {
@@ -222,6 +309,11 @@ public class Tablero extends JPanel implements Serializable{
                     }
 
          }
+
+    /**
+     *
+     * @param a
+     */
     public void actualizarMatrizCasillas(Casilla a [][]){
         c=a;
     }

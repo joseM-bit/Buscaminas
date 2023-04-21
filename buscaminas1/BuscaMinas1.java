@@ -24,7 +24,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-
+/**
+ *
+ * @author Jose Miguel/joseM-bit
+ */
 public class BuscaMinas1 extends JFrame implements MouseListener {
 
 
@@ -36,6 +39,9 @@ public class BuscaMinas1 extends JFrame implements MouseListener {
     JMenuItem reiniciar;
     JMenuItem fin;
     
+    /**
+     *
+     */
     public BuscaMinas1(){
         
         super("BUSCAMINAS");
@@ -97,13 +103,27 @@ public class BuscaMinas1 extends JFrame implements MouseListener {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
+    /**
+     *
+     * @param evento
+     */
     public void finJuego(ActionEvent evento){
         System.exit(0);
     }
+
+    /**
+     *
+     * @param evento
+     */
     public void reiniciar(ActionEvent evento){
         tablero.inicializacion();
         repaint();
     }
+
+    /**
+     *
+     * @param evento
+     */
     public void guardar(ActionEvent evento){
 
         ObjetosOut ois;
@@ -126,6 +146,11 @@ public class BuscaMinas1 extends JFrame implements MouseListener {
    
             }
     }
+
+    /**
+     *
+     * @param evento
+     */
     public void reanudarPartida(ActionEvent evento){
         ObjetosIn oin;
         JFileChooser ventanaSeleccion=new JFileChooser();
@@ -152,22 +177,37 @@ public class BuscaMinas1 extends JFrame implements MouseListener {
         }
     }
     
-      
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         BuscaMinas1 esc = new BuscaMinas1();
         esc.setVisible(true);
     }
 
+    /**
+     *
+     * @param me
+     */
     @Override
     public void mouseClicked(MouseEvent me) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param e
+     */
     @Override
     public void mousePressed(MouseEvent e) {
         
     }
 
+    /**
+     *
+     * @param e
+     */
     @Override
     public void mouseReleased(MouseEvent e) {
         int x = 0, y = 0, i, j = 0;
@@ -235,13 +275,19 @@ public class BuscaMinas1 extends JFrame implements MouseListener {
       
     }
 
-
-
+    /**
+     *
+     * @param me
+     */
     @Override
     public void mouseEntered(MouseEvent me) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param me
+     */
     @Override
     public void mouseExited(MouseEvent me) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

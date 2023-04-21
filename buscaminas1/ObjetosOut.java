@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 /**
  * 
  * @author Sammy Guergachi <sguergachi at gmail.com>
+ * Jose Miguel/joseM-bit
  */
 public class ObjetosOut {
     //Atributos
@@ -41,6 +42,10 @@ public class ObjetosOut {
         
     }
     
+    /**
+     *
+     * @param p
+     */
     public void escribirObjeto(Object p){
         try {
          
@@ -50,6 +55,10 @@ public class ObjetosOut {
         }
     }
     
+    /**
+     *
+     * @throws IOException
+     */
     public void cerrarEnlace() throws IOException{
         oos.close();
     }

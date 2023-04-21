@@ -6,9 +6,24 @@
 
 package buscaminas1;
 
-
+/**
+ *
+ * @author Jose Miguel/joseM-bit
+ */
 public enum Estado {
-ABRIR,
-MARCAR,
-INICIAL};
+
+    /**
+     *
+     */
+    ABRIR,
+
+    /**
+     *
+     */
+    MARCAR,
+
+    /**
+     *
+     */
+    INICIAL};
 
